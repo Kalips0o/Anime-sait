@@ -18,7 +18,7 @@ const categoriesData = () => {
             const productBlock = document.createElement('div')
             const listBlock = document.createElement('div')
             const list = array.filter(item => item.tags.includes(ganre))
-    
+
             listBlock.classList.add('row')
             productBlock.classList.add('mb-5')
 
@@ -78,7 +78,7 @@ const categoriesData = () => {
 
     const renderTopAnime = (array) => {
         const wrapper = document.querySelector('.filter__gallery')
-        
+
         array.forEach((item) => {
             wrapper.insertAdjacentHTML('beforeend', `
                 <div class="product__sidebar__view__item set-bg mix" data-setbg="${item.image}">
@@ -94,7 +94,7 @@ const categoriesData = () => {
         })
     }
 
-    fetch('./db.json')
+    fetch('/db.json')
         .then((response) => response.json())
         .then((data) => {
             const ganres = new Set()
