@@ -26,7 +26,7 @@ const detailData = () => {
             viewsBlock.insertAdjacentHTML('beforeend', `
                 <i class="fa fa-eye"></i> ${animeObj.views}</div>
             `)
-       
+
             titleBlock.textContent = animeObj.title
             subTitleBlock.textContent = animeObj['original-title']
             descriptionBlock.textContent = animeObj.description
@@ -54,7 +54,7 @@ const detailData = () => {
         }
     }
 
-    fetch('./db.json')
+    fetch('https://anime-date-fbec3-default-rtdb.firebaseio.com/anime.json')
         .then((response) => response.json())
         .then((data) => {
             const ganres = new Set()

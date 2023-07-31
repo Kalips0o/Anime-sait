@@ -93,7 +93,7 @@ const mainData = () => {
         })
     }
 
-    fetch('/db.json')
+    fetch('https://anime-date-fbec3-default-rtdb.firebaseio.com/anime.json')
         .then((response) => response.json())
         .then((data) => {
             const ganres = new Set()
