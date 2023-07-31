@@ -4,11 +4,11 @@ const mainData = () => {
     const renderGanreList = (ganres) => {
         const dropdownBlock = document.querySelector('.header__menu .dropdown')
 
-        ganres.forEach(ganre => {
+       ganres.forEach(ganre => {
             dropdownBlock.insertAdjacentHTML('beforeend', `
                 <li><a href="./categories.html?ganre=${ganre}">${ganre}</a></li>
             `)
-        })
+       })
     }
 
     const renderAnimeList = (array, ganres) => {
@@ -83,7 +83,7 @@ const mainData = () => {
                 <div class="product__sidebar__view__item set-bg mix" data-setbg="${item.image}">
                     <div class="ep">${item.rating} / 10</div>
                     <div class="view"><i class="fa fa-eye"></i> ${item.views}</div>
-                    <h5><a href="/anime-details.html">${item.title}</a></h5>
+                    <h5><a href="../anime-details.html">${item.title}</a></h5>
                 </div>
             `)
         })
@@ -93,7 +93,7 @@ const mainData = () => {
         })
     }
 
-    fetch('./db.json')
+    fetch('/db.json')
         .then((response) => response.json())
         .then((data) => {
             const ganres = new Set()
